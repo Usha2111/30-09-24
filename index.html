@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <!-- Task 1: Filter and Display Long Words from an Array
+   •Description: You are given an array of words. Filter the words that are longer than 5 characters and display them in an unordered list (<ul>) in the HTML.
+   •Array Method: filter()
+   •String Method: length
+   •DOM Manipulation: Create an unordered list in the DOM and append filtered words as list items.
+   •Example Input: ["apple", "banana", "grape", "watermelon", "kiwi", "strawberry"]
+   •Example Output: A list in the DOM displaying:
+   –watermelon
+   –strawberry -->
+   <script>
+    let arr=["apple", "banana", "grape", "watermelon", "kiwi", "strawberry"]
+    arr1=[];
+    let res=arr.filter(element=>{
+        if(element.length>5)
+       arr1.push(element)
+    })
+    console.log(res);
+   arr1.forEach((element)=>{
+        let ul=document.createElement("ul")
+        document.body.appendChild(ul)
+        let li=document.createElement("li")
+        ul.appendChild(li);
+         li.innerText=element;
+    });
+    </script>
+     <!-- Task 2: Capitalize and Display Strings from an Array
+ •Description: You are given an array of strings. Convert all the strings to uppercase and display them in a paragraph (<p>) in the HTML.
+ •Array Method: map()
+ •String Method: toUpperCase()
+ •DOM Manipulation: Create a paragraph element in the DOM and display the capitalized strings.
+ •Example Input: ["hello", "world", "javascript", "dom"]
+ •Example Output: A paragraph in the DOM displaying:
+ –HELLO WORLD JAVASCRIPT DOM
+
+   -->
+<script>
+     let arr2=["hello", "world", "javascript", "dom"]
+            let res1 = arr2.map((element)=>{
+                return element.toUpperCase();
+            }) 
+        let p=document.createElement("p")
+        document.body.appendChild(p)
+        text=res1.join(" ");
+         p.innerText=text;
+</script>
+<!-- Task 3: Join and Display Array Elements as a Sentence
+•Description: You are given an array of words. Join the words together to form a sentence and display it in a div in the HTML.
+•Array Method: join()
+•String Method: None
+•DOM Manipulation: Create a div in the DOM and display the sentence.
+•Example Input: ["I", "am", "learning", "JavaScript", "today"]
+•Example Output: A div in the DOM displaying:
+–I am learning JavaScript today. -->
+<script>
+    let  arr3= ["I", "am", "learning", "JavaScript", "today"]
+    let res2=arr3.join(" ")
+    let div=document.createElement("div")
+        document.body.appendChild(div)
+         div.innerText=res2;
+</script>
+<!-- Task 4: Reverse Strings in an Array and Display Them
+•Description: You are given an array of strings. Reverse each string and display them in a list (<ul>) in the HTML.
+•Array Method: map()
+•String Method: split(), reverse(), join()
+•DOM Manipulation: Create an unordered list in the DOM and append reversed strings as list items.
+•Example Input: ["dog", "cat", "bird", "fish"]
+•Example Output: A list in the DOM displaying:
+–god
+–tac
+–drib
+–hsif -->
+<script>
+     var arr4= ["dog", "cat", "bird", "fish"]
+              let res3=arr4.map((element)=>{
+               return element.split('').reverse().join('');
+            }) 
+           res3.forEach((element)=>{
+            let ol=document.createElement("ol")
+        document.body.appendChild(ol)
+        let li=document.createElement("li")
+        ol.appendChild(li);
+         li.innerText=element;
+        });
+  </script>
+<!-- Task 5: Count and Display the Number of Vowels in Each Word
+•Description: You are given an array of words. For each word, count the number of vowels and display the word along with its vowel count in a list (<ul>) in the HTML.
+•Array Method: map()
+•String Method: match()
+•DOM Manipulation: Create an unordered list in the DOM and append each word with its vowel count.
+•Example Input: ["apple", "banana", "grape"]
+•Example Output: A list in the DOM displaying:
+–apple (2 vowels)
+–banana (3 vowels)
+–grape (2 vowels) -->
+<script>
+
+     fruits=["apple", "banana", "grape"];
+        arr=["a","e","i","o","u"];
+        function funone(){
+            res1=[];
+        for(var data of fruits){
+            res=data.split("");
+            count=0;
+            for(var data1 of res){
+                if(arr.includes(data1)){
+                    count++;
+                }
+            }
+            res1.push(`${data} (${count} vowels)`)};
+            res1.forEach(element=>{ let unlist=document.createElement("ul");
+            unlist.className="task5"
+                document.body.appendChild(unlist);
+                let list2=document.createElement("li");
+                unlist.appendChild(list2);
+                list2.innerText=element});
+        };
+        funone();
+
+</script>
+</body>
+    </html>
